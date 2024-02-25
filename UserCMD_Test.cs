@@ -26,13 +26,13 @@
                     char previus = '\0';
                     for (int x = 0; x < 0x7F0/*9999*/; x++)
                     {
-                        if (memory.Read<int>((ulong)(cmd_lists + i * 0x7f0 + x)) != 0 && previus == '\0')
+                        if (memory.Read<int>((ulong)(cmd_lists + i * 0x7F0 + x)) != 0 && previus == '\0')
                         {
-                            string command = memory.ReadString((ulong)(cmd_lists + i * 0x7f0 + x), 128, false);
+                            string command = memory.ReadString((ulong)(cmd_lists + i * 0x7F0 + x), 128, false);
                             Console.WriteLine(command);
                         }
 
-                        previus = memory.Read<char>((ulong)(cmd_lists + i * 0x7f0 + x));
+                        previus = memory.Read<char>((ulong)(cmd_lists + i * 0x7F0 + x));
                     }
                 }
             }
